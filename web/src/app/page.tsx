@@ -34,7 +34,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.0 }}
-            className="inline-block text-neutral-900 dark:text-neutral-100"
+            className="inline-block text-foreground"
           >
             <LogoMark size={64} />
           </motion.div>
@@ -53,7 +53,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-2 text-base text-neutral-500 dark:text-neutral-400"
+          className="mt-2 text-base text-muted-foreground"
           aria-label="Pronunciation of Edaphic"
         >
           e·daph·ic <span className="mx-1">/</span>
@@ -83,10 +83,10 @@ export default function Home() {
         transition={{ duration: 0.45, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
         className="px-6 pb-8"
       >
-        <div className="w-full max-w-[64ch] mx-auto text-base text-neutral-400">
+        <div className="w-full max-w-[64ch] mx-auto text-base text-muted-foreground">
           <a
             href="mailto:contact@edaphic.xyz"
-            className="underline-offset-4 hover:underline focus-visible:underline outline-none"
+            className="underline-offset-4 hover:no-underline focus-visible:underline outline-none transition-colors hover:text-foreground"
           >
             contact@edaphic.xyz
           </a>

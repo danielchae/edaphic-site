@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import { ThemeProvider } from "../components/theme-provider";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -64,10 +66,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} antialiased bg-white text-neutral-900 dark:bg-black dark:text-neutral-100`}>
-        {children}
-        <Analytics />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}> 
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <DottedSurface className="opacity-40 dark:opacity-35" speed={0.02} />
+          <div className="relative z-10">
+            {children}
+            <Analytics />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

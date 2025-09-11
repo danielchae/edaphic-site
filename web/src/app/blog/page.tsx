@@ -14,11 +14,11 @@ export default async function BlogIndex() {
             <Link className="underline-offset-4 hover:underline" href={`/blog/${p.slug}`}>
               {p.title}
             </Link>
-            <div className="text-sm text-neutral-500">{new Date(p.date).toLocaleDateString()}</div>
+            <div className="text-sm text-muted-foreground">{new Date(p.date).toLocaleDateString()}</div>
           </li>
         ))}
         {posts.length === 0 && (
-          <li className="text-neutral-500">No posts yet.</li>
+          <li className="text-muted-foreground">No posts yet.</li>
         )}
       </ul>
     </main>
