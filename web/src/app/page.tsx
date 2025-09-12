@@ -10,6 +10,13 @@ export default function Home() {
 
   useEffect(() => {
     if (prefersReduced) return;
+
+    // Disable Lenis on touch devices (especially Firefox Android) to avoid blocking native scroll
+    const ua = navigator.userAgent || navigator.vendor;
+    const isTouch = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
+    const isFirefoxAndroid = /Android/i.test(ua) && /Firefox/i.test(ua);
+    if (isTouch || isFirefoxAndroid) return;
+
     const lenis = new Lenis({
       duration: 1.1,
       smoothWheel: true,
