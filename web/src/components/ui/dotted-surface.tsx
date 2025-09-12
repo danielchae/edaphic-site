@@ -50,6 +50,9 @@ export function DottedSurface({ className, speed = 0.02, ...props }: DottedSurfa
 		renderer.setClearColor(scene.fog.color, 0);
 
 		containerRef.current.appendChild(renderer.domElement);
+		// Ensure the canvas never captures touch/scroll events on mobile
+		renderer.domElement.style.pointerEvents = 'none';
+		renderer.domElement.setAttribute('aria-hidden', 'true');
 		const containerEl = containerRef.current;
 
 		// Create particles
