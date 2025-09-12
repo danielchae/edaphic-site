@@ -16,7 +16,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
   return (
     <main className="prose prose-neutral dark:prose-invert max-w-2xl mx-auto px-6 py-16">
       <h1 className="!mb-2">{post.meta.title}</h1>
-      <div className="text-sm text-neutral-500 !mt-0">{new Date(post.meta.date).toLocaleDateString()}</div>
+      <div className="text-sm text-muted-foreground !mt-0">{new Date(post.meta.date).toLocaleDateString()}</div>
       <article className="mt-8">
         {/* MDXRemote on the RSC path directly renders the content */}
         <MDXRemote source={post.content} />
