@@ -30,8 +30,19 @@ export function DottedSurface({ className, speed = 0.02, ...props }: DottedSurfa
 		// Scene setup
 		const scene = new THREE.Scene();
 		const isDark = resolvedTheme === 'dark';
+		// Resolve brand color from CSS variable so it matches the rest of the content
+		const brandPrimary = (() => {
+			try {
+				const v = getComputedStyle(document.documentElement)
+					.getPropertyValue('--primary')
+					.trim();
+				return v || '#B2E67A';
+			} catch {
+				return '#B2E67A';
+			}
+		})();
 		// Stronger fog to increase depth disappearance; match theme background
-		scene.fog = new THREE.Fog(isDark ? 0x000000 : 0xffffff, 800, 3500);
+		scene.fog = new THREE.Fog(isDark ? 0x12332a : 0xffffff, 800, 3500);
 
 		const camera = new THREE.PerspectiveCamera(
 			60,
@@ -74,7 +85,8 @@ export function DottedSurface({ className, speed = 0.02, ...props }: DottedSurfa
 			ctx.beginPath();
 			ctx.arc(size / 2, size / 2, size / 2 - 1, 0, Math.PI * 2);
 			ctx.closePath();
-			ctx.fillStyle = '#ffffff'; // white mask; actual brightness via vertex colors
+			// White mask so material.color controls tint uniformly
+			ctx.fillStyle = '#ffffff';
 			ctx.fill();
 			const texture = new THREE.CanvasTexture(canvas);
 			texture.minFilter = THREE.LinearFilter;
@@ -117,8 +129,9 @@ export function DottedSurface({ className, speed = 0.02, ...props }: DottedSurfa
 		// Create material
 		const material = new THREE.PointsMaterial({
 			size: 10,
-			vertexColors: true,
+			vertexColors: false,
 			map: dotTexture ?? undefined,
+			color: new THREE.Color(brandPrimary),
 			alphaTest: 0.1,
 			transparent: true,
 			opacity: 1,
