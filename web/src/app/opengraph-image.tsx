@@ -21,8 +21,8 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           padding: "72px",
-          background: "#ffffff",
-          color: "#0a0a0a",
+          background: "#12332A",
+          color: "#B2E67A",
           fontSize: 56,
           fontFamily: "Inter, ui-sans-serif, system-ui",
         }}
@@ -42,9 +42,9 @@ export default async function Image() {
               border: "2px solid #0a0a0a",
             }}
           />
-          <div style={{ fontWeight: 600 }}>Edaphic</div>
+          <div style={{ fontWeight: 600, color: "#B2E67A" }}>Edaphic</div>
         </div>
-        <div style={{ marginTop: 16, fontSize: 28, color: "#4d4d4d" }}>
+        <div style={{ marginTop: 16, fontSize: 28, color: "#B2E67A" }}>
           of, produced by, or influenced by the soil. AI-native venture studio.
         </div>
       </div>

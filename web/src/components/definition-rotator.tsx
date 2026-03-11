@@ -66,7 +66,7 @@ export function DefinitionRotator({ items, intervalMs = 4200, typeDelayMs = 50, 
 
   if (prefersReduced) {
     return (
-      <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-300 tracking-tight whitespace-nowrap">
+      <p className="text-base sm:text-lg text-primary tracking-tight whitespace-nowrap">
         {current}
       </p>
     );
@@ -76,7 +76,7 @@ export function DefinitionRotator({ items, intervalMs = 4200, typeDelayMs = 50, 
 
   return (
     <div className="relative inline-flex items-baseline overflow-hidden whitespace-nowrap align-baseline min-h-[1em]">
-      <span className="text-base text-neutral-700 dark:text-neutral-300 tracking-tight leading-tight">
+      <span className="text-base text-primary tracking-tight leading-tight">
         {display}
       </span>
       <BlinkCursor active={isHolding} />
@@ -88,7 +88,7 @@ function BlinkCursor({ active = false }: { active?: boolean }) {
   return (
     <span
       aria-hidden
-      className={`ml-[1px] inline-block align-baseline leading-tight select-none text-neutral-500 dark:text-neutral-400 ${
+      className={`ml-[1px] inline-block align-baseline leading-tight select-none text-primary ${
         active ? "animate-[cursor-blink_1.1s_steps(1)_infinite]" : ""
       }`}
     >
