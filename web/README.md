@@ -19,7 +19,7 @@ Deployment
 1) Push this project to GitHub.
 2) Import into Vercel, framework auto-detected.
 3) Set `NEXT_PUBLIC_SITE_URL` in Vercel Project Settings → Environment Variables.
-4) Assign domain when ready (e.g., edaphic.xyz).
+4) Assign domain when ready (e.g., edaphic.co).
 
 Content
 

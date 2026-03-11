@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
       : typeof process !== "undefined" && process.env.VERCEL_URL
         ? new URL(`https://${process.env.VERCEL_URL}`)
-        : new URL("https://edaphic.xyz"),
+        : new URL("https://edaphic.co"),
   title: {
     default: "Edaphic",
     template: "%s · Edaphic",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://edaphic.xyz/",
+    url: "https://edaphic.co/",
     siteName: "Edaphic",
     title: "Edaphic",
     description:

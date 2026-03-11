@@ -92,10 +92,10 @@ export default function Home() {
       >
         <div className="w-full max-w-[64ch] mx-auto text-base text-muted-foreground">
           <a
-            href="mailto:contact@edaphic.xyz"
+            href="mailto:contact@edaphic.co"
             className="underline-offset-4 hover:no-underline focus-visible:underline outline-none transition-colors hover:text-foreground"
           >
-            contact@edaphic.xyz
+            contact@edaphic.co
           </a>
         </div>
       </motion.footer>
