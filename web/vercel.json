@@ -2,8 +2,24 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "edaphic-site.vercel.app"
+        }
+      ],
+      "destination": "https://edaphic.co/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "edaphic-site.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "edaphic-site.vercel.app"
+        }
+      ],
       "destination": "https://edaphic.co/:path*",
       "permanent": true
     }
